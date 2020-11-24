@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <!-- font awesome -->
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/277d889efd.js"></script>
-    <title>Address book</title>
+    <title>AddressBook</title>
 </head>
 <body>
 <div class="container">
@@ -17,17 +17,17 @@
         <div class="col s12">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">Address book</span>
+                    <span class="card-title">AddressBook App</span>
                     <form id="contact-form">
                         <div class="row">
                             <div class="input-field col s12">
-                                <label for="first_name">First name</label>
+                                <label for="first_name">First Name</label>
                                 <input id="first_name" type="text">
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <label for="last_name">Last name</label>
+                                <label for="last_name">Last Name</label>
                                 <input id="last_name" type="text">
                             </div>
                         </div>
@@ -55,11 +55,11 @@
                                 <input id="phone" type="text">
                             </div>
                         </div>
-                        <input class="btn" type="submit" value="Add Contact">
+                        <input class="btn" type="submit" value="Add contact">
                     </form>
                 </div>
                 <div class="card-action">
-                    <h5>Contact list</h5>
+                    <h5>Contacts</h5>
                     <div class="input-field col s12">
                         <label for="filter">Find contact</label>
                         <input id="filter" type="text">
@@ -67,26 +67,18 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th>City</th>
                             <th>Street</th>
                             <th>Postcode</th>
                             <th>Phone</th>
                         </tr>
                         </thead>
-                        <tbody class="contacts-table">
-                        <tr>
-                            <td>User</td>
-                            <td>User</td>
-                            <td>Tallinn</td>
-                            <td>Aia</td>
-                            <td>740013</td>
-                            <td>5104623</td>
-                        </tr>
+                        <tbody id="contacts-table">
                         </tbody>
                     </table>
-                    <a class="btn" href="#" id="clear-tasks">Clear contacts</a>
+                    <a class="btn grey" href="#" id="clear-tasks">Clear Contacts</a>
                 </div>
             </div>
         </div>
@@ -95,7 +87,7 @@
 <!-- Compiled and minified JavaScript - materialize -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- local js -->
-<script> src = "Person.js"</script>
+<script src="Person.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
