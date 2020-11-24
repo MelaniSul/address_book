@@ -11,17 +11,19 @@ const contact = [firstName, lastName, city, street, postCode, phone];
 form.addEventListener('submit', addContact);
 
 function addContact(e) {
-    if (firstName.value === '' || lastName.value === '' ||
-        city.value === '' || street.value === '' || postCode.value === '' || phone.value === '') {
+    if (firstName.value === '') {
         alert("Add new contact data!")
     } else {
+        const person = new Person(firstName.value, lastName.value, city.value, street.value, postCode.value, phone.value);
         const tr = document.createElement('tr');
-        contact.forEach(function (contactData) {
-            const td = document.createElement('td');
-            td.appendChild(document.createTextNode(firstName.value));
-            tr.appendChild(td);
-        });
+        tr.innerHTML = `<td>${person.firstName}</td>
+                        <td>${person.lastName}</td>
+                        <td>${person.city}</td>
+                        <td>${person.street}</td>
+                        <td>${person.postCode}</td>
+                        <td>${person.phone}</td>`;
         contacts.appendChild(tr);
+        console.log(contacts);
         e.preventDefault();
     }
 }
