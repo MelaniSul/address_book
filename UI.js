@@ -14,23 +14,23 @@ class UI {
         contacts.appendChild(tr);
     }
 
-    alert(message) {
-        //Create div for message
+    alertMessage(message, style) {
+        // create div for alert message
         const div = document.createElement('div');
-        //add class to div
-        div.className = "alert"
-        //create string value of message for div
-        const string = document.createTextNode(message);
-        //add message to div
-        div.appendChild(string);
-        //find components - before and after div element
-        const card = document.querySelector('.card-title');
-        const appForm = document.querySelector('#contact-form');
-        //add alert info to html
-        card.insertBefore(div, appForm);
-        //set alert for 5sek
+        // add class to div
+        div.className = `alert ${style}`;
+        // create string value of message for div
+        const text = document.createTextNode(message);
+        // insert text into div
+        div.appendChild(text);
+        // find components - before and after alert div element
+        const card = document.querySelector('.card-content');
+        const form = document.querySelector('#contact-form');
+        // add alert info html
+        card.insertBefore(div, form);
+        // set alert messega up to 5 sec
         setTimeout(function () {
-            document.querySelector("alert").remove();
+            document.querySelector(".alert").remove();
         }, 5000);
     }
 }
