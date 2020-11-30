@@ -39,4 +39,7 @@ class UI {
         const personContact = eventElement.parentElement.parentElement.parentElement;
         personContact.remove();
     }
+
+    showContacts() {
+    }
 }
