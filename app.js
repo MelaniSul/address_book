@@ -3,6 +3,7 @@
 // app data html elements
 const form = document.querySelector('#contact-form');
 const contacts = document.querySelector('#contacts-table');
+const clearBtn = document.querySelector('#clear-tasks');
 
 // define event listeners
 //page reload event - get data from local storage
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', getContacts);
 form.addEventListener('submit', addContact);
 //delete contact
 contacts.addEventListener('click', deleteContact);
+clearBtn.addEventListener('click', clearTasks);
 
 // project functions
 // addContact
@@ -39,8 +41,9 @@ function addContact(e) {
         //save persons data to ls
         ls.saveContact(person);
         ui.alertMessage("added contact to address book", "ok");
+        person.firstName.value = '';
+        e.preventDefault();
     }
-    e.preventDefault();
 }
 
 function deleteContact(e) {
@@ -79,4 +82,9 @@ function getContacts() {
         //create ui object for html table row
         ui.addPersonToTable(personData);
     })
+}
+
+function clearTasks(e) {
+    contacts.innerHTML = '';
+    localStorage.clear();
 }
