@@ -45,8 +45,21 @@ function addContact(e) {
 
 function deleteContact(e) {
     const ui = new UI();
+    const ls = new LS();
+    const deleteBtn = e.target;
+    const firstname = (deleteBtn.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        .previousElementSibling.previousElementSibling.textContent);
+    const lastname = (deleteBtn.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        .previousElementSibling.textContent);
+    console.log(firstname, lastname);
     ui.deletePersonFromTable(e.target);
-    ui.alertMessage("Contact was deleted!", "ok");
+    const isDeleted = ls.deleteContact(firstname, lastname);
+    //set alert
+    if (isDeleted) {
+        ui.alertMessage("Contact was deleted!", "ok");
+    } else {
+        ui.alertMessage("Problem with deleteing data", "problem");
+    }
     e.preventDefault();
 }
 

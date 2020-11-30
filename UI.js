@@ -40,6 +40,4 @@ class UI {
         personContact.remove();
     }
 
-    showContacts() {
-    }
 }
